@@ -46,7 +46,6 @@ class ContactsHandler(BaseResource):
     @ErrorHandler("Credit User Delete", app)
     def delete(self, contact_id):
         app.logger.info("Received Contact delete request")
-        request_data = request.get_json(force=True)
         response = self.contact_access.delete_contacts(contact_id)
         return ok_response(response)
 
