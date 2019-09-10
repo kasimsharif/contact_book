@@ -42,11 +42,10 @@ class ContactsAccess:
         :return:
         """
         contact = validate_post_contact_data(data)
-
         try:
             contact_obj = update_contact(contact_id, contact.email_id, contact.name, contact.numbers)
         except:
-            raise CustomError(400, "Contact not found")
+            raise CustomError(400, "Contact not found/ Duplicate Entry")
         return get_contact_json(contact_obj)
 
     def delete_contacts(self, contact_id):
