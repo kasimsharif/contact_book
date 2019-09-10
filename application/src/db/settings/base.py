@@ -52,8 +52,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'credit_management_service.db.urls'
-
 TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
 
 TEMPLATES = [
