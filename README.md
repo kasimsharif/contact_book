@@ -38,6 +38,11 @@ $ export DB_PASSWORD=test@123
 $ export ENVIRONMENT=development;export DJANGO_SETTINGS_MODULE=application.src.db.settings.development; export PYTHONPATH=$PWD
 $ python application/src/db/manage.py test
 ```
+5. Run the Django migrations:
+```
+$ export ENVIRONMENT=development;export DJANGO_SETTINGS_MODULE=application.src.db.settings.development; export PYTHONPATH=$PWD
+$ python application/src/db/manage.py migrate
+```
 
 5. Run application by:
 ```
