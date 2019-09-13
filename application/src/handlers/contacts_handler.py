@@ -13,7 +13,7 @@ class ContactsHandler(BaseResource):
         self.contact_access = ContactsAccess()
 
 
-    @ErrorHandler("Credit User Get", app)
+    @ErrorHandler("Contact Get", app)
     def get(self):
         """
         Get request to access contact list
@@ -25,7 +25,7 @@ class ContactsHandler(BaseResource):
         response = self.contact_access.search_contact(request_data)
         return ok_response(response)
 
-    @ErrorHandler("Credit User Post", app)
+    @ErrorHandler("Contact Post", app)
     def post(self):
         """
         Post Request to create contacts
@@ -36,14 +36,14 @@ class ContactsHandler(BaseResource):
         response = self.contact_access.create_new_contacts(request_data)
         return ok_response(response)
 
-    @ErrorHandler("Credit User Put", app)
+    @ErrorHandler("Contact Put", app)
     def put(self, contact_id):
         app.logger.info("Received Contact put request")
         request_data = request.get_json(force=True)
         response = self.contact_access.edit_contacts(request_data, contact_id)
         return ok_response(response)
 
-    @ErrorHandler("Credit User Delete", app)
+    @ErrorHandler("Contact Delete", app)
     def delete(self, contact_id):
         app.logger.info("Received Contact delete request")
         response = self.contact_access.delete_contacts(contact_id)
